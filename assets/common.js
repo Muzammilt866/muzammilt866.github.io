@@ -14,26 +14,32 @@ window.SBGOV_CONFIG = {
   function initTurnstile() {
     if (typeof turnstile === "undefined") return;
 
-    applyWidgetId = turnstile.render("#apply-turnstile", {
-      sitekey: cfg.TURNSTILE_SITEKEY, action: "apply", theme: "light",
-      callback: (t) => { tokens.apply = t; },
-      "expired-callback": () => { tokens.apply = ""; },
-      "error-callback": () => { tokens.apply = ""; },
-    });
+    if (document.getElementById("apply-turnstile")) {
+      applyWidgetId = turnstile.render("#apply-turnstile", {
+        sitekey: cfg.TURNSTILE_SITEKEY, action: "apply", theme: "light",
+        callback: (t) => { tokens.apply = t; },
+        "expired-callback": () => { tokens.apply = ""; },
+        "error-callback": () => { tokens.apply = ""; },
+      });
+    }
 
-    statusWidgetId = turnstile.render("#status-turnstile", {
-      sitekey: cfg.TURNSTILE_SITEKEY, action: "status", theme: "light",
-      callback: (t) => { tokens.status = t; },
-      "expired-callback": () => { tokens.status = ""; },
-      "error-callback": () => { tokens.status = ""; },
-    });
+    if (document.getElementById("status-turnstile")) {
+      statusWidgetId = turnstile.render("#status-turnstile", {
+        sitekey: cfg.TURNSTILE_SITEKEY, action: "status", theme: "light",
+        callback: (t) => { tokens.status = t; },
+        "expired-callback": () => { tokens.status = ""; },
+        "error-callback": () => { tokens.status = ""; },
+      });
+    }
 
-    reportWidgetId = turnstile.render("#report-turnstile", {
-      sitekey: cfg.TURNSTILE_SITEKEY, action: "report", theme: "light",
-      callback: (t) => { tokens.report = t; },
-      "expired-callback": () => { tokens.report = ""; },
-      "error-callback": () => { tokens.report = ""; },
-    });
+    if (document.getElementById("report-turnstile")) {
+      reportWidgetId = turnstile.render("#report-turnstile", {
+        sitekey: cfg.TURNSTILE_SITEKEY, action: "report", theme: "light",
+        callback: (t) => { tokens.report = t; },
+        "expired-callback": () => { tokens.report = ""; },
+        "error-callback": () => { tokens.report = ""; },
+      });
+    }
   }
 
   async function apiPost(path, payload) {
