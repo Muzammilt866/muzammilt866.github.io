@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>举报违规网域 - sbgov.tw</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+</head>
+<body class="min-h-screen bg-slate-50 flex items-center justify-center p-4">
+<div class="w-full max-w-lg bg-white rounded-2xl shadow p-8 space-y-6">
+  <div class="flex justify-between items-center text-sm">
+    <div class="space-x-3">
+      <a href="./index-zh-cn.html" class="text-slate-400 hover:text-slate-900">首页</a>
+      <a href="./privacy/" class="text-slate-400 hover:text-slate-900">隐私政策</a>
+      <a href="./terms/" class="text-slate-400 hover:text-slate-900">使用条款</a>
+    </div>
+    <div class="space-x-3">
+      <a href="./report.html" class="text-slate-400 hover:text-slate-900">繁中</a>
+      <a href="./report-en.html" class="text-slate-400 hover:text-slate-900">EN</a>
+      <a href="./report-zh-cn.html" class="text-slate-900 font-semibold">简中</a>
+    </div>
+  </div>
+
+  <div>
+    <h1 class="text-2xl font-bold text-red-600">举报违规网域</h1>
+    <p class="text-sm text-slate-500 mt-1">若发现滥用、钓鱼或违反条款之网域，请在此回报。</p>
+  </div>
+
+  <div class="space-y-4">
+    <div>
+      <label class="block text-sm font-medium mb-1">违规子网域</label>
+      <div class="flex items-center gap-2">
+        <input id="report-sub" class="flex-1 border rounded-lg px-3 py-2" placeholder="mysite">
+        <span class="text-slate-500">.sbgov.tw</span>
+      </div>
+    </div>
+    
+    <div>
+      <label class="block text-sm font-medium mb-1">违规原因</label>
+      <textarea id="report-reason" rows="3" class="w-full border rounded-lg px-3 py-2" placeholder="请描述具体违规行为（如：钓鱼、诈骗、恶意软件等）"></textarea>
+    </div>
+
+    <div>
+      <label class="block text-sm font-medium mb-1">您的联系方式（选填）</label>
+      <input id="report-contact" class="w-full border rounded-lg px-3 py-2" placeholder="Email / Discord（方便我们通知您处理结果）">
+    </div>
+
+    <div id="report-turnstile"></div>
+    <button id="report-go" class="w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700">送出举报</button>
+    <p id="report-msg" class="text-sm min-h-[1.25rem]"></p>
+  </div>
+</div>
+
+<script src="./assets/common.js"></script>
+<script>
+  SBGOV.initTurnstile();
+  SBGOV.bindReport({
+    loading: "发送中…",
+    success: "举报已送出，感谢您的回报",
+    fail: "发送失败",
+    waitTurnstile: "请先完成人机验证",
+  });
+</script>
+</body>
+</html>
