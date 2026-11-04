@@ -41,7 +41,7 @@ window.SBGOV_CONFIG = {
       });
       return await r.json();
     } catch (e) {
-      return { ok: false, error: "網路錯誤：" + e };
+      return { ok: false, error: "網路錯誤 / Network Error: " + e };
     }
   }
 
@@ -82,6 +82,7 @@ window.SBGOV_CONFIG = {
     btn.onclick = async () => {
       const sub = document.getElementById("apply-sub").value.trim().toLowerCase();
       const tgt = document.getElementById("apply-tgt").value.trim().toLowerCase();
+      const contact = document.getElementById("apply-contact").value.trim();
       const msg = document.getElementById("apply-msg");
 
       if (!tokens.apply) {
@@ -91,11 +92,14 @@ window.SBGOV_CONFIG = {
       }
       msg.className = "text-sm text-slate-400";
       msg.textContent = opts.loading || "提交中…";
+      
       const j = await apiPost("/api/apply", {
         subdomain: sub,
         github_target: tgt,
+        contact: contact,
         turnstile_token: tokens.apply,
       });
+      
       tokens.apply = "";
       if (applyWidgetId) turnstile.reset(applyWidgetId);
       msg.className = "text-sm " + (j.ok ? "text-green-600" : "text-red-600");
