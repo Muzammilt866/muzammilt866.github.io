@@ -32,22 +32,39 @@
   </div>
 
   <div id="panel-apply" class="space-y-4">
-    <label class="block text-sm font-medium">Subdomain</label>
-    <div class="flex items-center gap-2">
-      <input id="apply-sub" class="flex-1 border rounded-lg px-3 py-2" placeholder="mysite">
-      <span class="text-slate-500">.sbgov.tw</span>
+    <div>
+      <label class="block text-sm font-medium mb-1">Subdomain</label>
+      <div class="flex items-center gap-2">
+        <input id="apply-sub" class="flex-1 border rounded-lg px-3 py-2" placeholder="mysite">
+        <span class="text-slate-500">.sbgov.tw</span>
+      </div>
     </div>
-    <label class="block text-sm font-medium">GitHub Pages Target</label>
-    <input id="apply-tgt" class="w-full border rounded-lg px-3 py-2" placeholder="username.github.io">
+    
+    <div>
+      <label class="block text-sm font-medium mb-1">GitHub Pages Target</label>
+      <input id="apply-tgt" class="w-full border rounded-lg px-3 py-2" placeholder="username.github.io">
+    </div>
+
+    <div>
+      <label class="block text-sm font-medium mb-1">Contact Info (Highly Recommended)</label>
+      <input id="apply-contact" class="w-full border rounded-lg px-3 py-2" placeholder="e.g. Discord / Email">
+      <p class="text-red-500 text-xs mt-1 leading-relaxed">
+        ⚠️ Note: Failure to provide valid contact information may result in the application being rejected. If a violation occurs and we cannot reach you, the subdomain will be suspended.
+      </p>
+    </div>
+
     <div id="apply-turnstile"></div>
     <button id="apply-go" class="w-full bg-slate-900 text-white py-2 rounded-lg hover:bg-slate-700">Submit</button>
     <p id="apply-msg" class="text-sm min-h-[1.25rem]"></p>
   </div>
 
   <div id="panel-status" class="space-y-4 hidden">
-    <div class="flex items-center gap-2">
-      <input id="status-sub" class="flex-1 border rounded-lg px-3 py-2" placeholder="mysite">
-      <span class="text-slate-500">.sbgov.tw</span>
+    <div>
+      <label class="block text-sm font-medium mb-1">Subdomain</label>
+      <div class="flex items-center gap-2">
+        <input id="status-sub" class="flex-1 border rounded-lg px-3 py-2" placeholder="mysite">
+        <span class="text-slate-500">.sbgov.tw</span>
+      </div>
     </div>
     <div id="status-turnstile"></div>
     <button id="status-go" class="w-full bg-slate-900 text-white py-2 rounded-lg hover:bg-slate-700">Check</button>
