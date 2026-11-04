@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apply for sbgov.tw Subdomain</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+</head>
+<body class="min-h-screen bg-slate-50 flex items-center justify-center p-4">
+<div class="w-full max-w-lg bg-white rounded-2xl shadow p-8 space-y-6">
+  <div class="flex justify-between items-center text-sm">
+    <div class="space-x-3">
+      <a href="./privacy/" class="text-slate-400 hover:text-slate-900">Privacy</a>
+      <a href="./terms/" class="text-slate-400 hover:text-slate-900">Terms</a>
+    </div>
+    <div class="space-x-3">
+      <a href="./index.html" class="text-slate-400 hover:text-slate-900">繁中</a>
+      <a href="./index-en.html" class="text-slate-900 font-semibold">EN</a>
+      <a href="./index-zh-cn.html" class="text-slate-400 hover:text-slate-900">简中</a>
+    </div>
+  </div>
+
+  <div>
+    <h1 class="text-2xl font-bold">Apply for a Free Subdomain</h1>
+    <p class="text-sm text-slate-500 mt-1">Pointing to your GitHub Pages (*.github.io)</p>
+  </div>
+
+  <div class="flex gap-4 border-b">
+    <button id="tab-apply" class="px-3 py-2 border-b-2 border-slate-900 font-semibold">Apply</button>
+    <button id="tab-status" class="px-3 py-2 text-slate-400">Check Status</button>
+  </div>
+
+  <div id="panel-apply" class="space-y-4">
+    <label class="block text-sm font-medium">Subdomain</label>
+    <div class="flex items-center gap-2">
+      <input id="apply-sub" class="flex-1 border rounded-lg px-3 py-2" placeholder="mysite">
+      <span class="text-slate-500">.sbgov.tw</span>
+    </div>
+    <label class="block text-sm font-medium">GitHub Pages Target</label>
+    <input id="apply-tgt" class="w-full border rounded-lg px-3 py-2" placeholder="username.github.io">
+    <div id="apply-turnstile"></div>
+    <button id="apply-go" class="w-full bg-slate-900 text-white py-2 rounded-lg hover:bg-slate-700">Submit</button>
+    <p id="apply-msg" class="text-sm min-h-[1.25rem]"></p>
+  </div>
+
+  <div id="panel-status" class="space-y-4 hidden">
+    <div class="flex items-center gap-2">
+      <input id="status-sub" class="flex-1 border rounded-lg px-3 py-2" placeholder="mysite">
+      <span class="text-slate-500">.sbgov.tw</span>
+    </div>
+    <div id="status-turnstile"></div>
+    <button id="status-go" class="w-full bg-slate-900 text-white py-2 rounded-lg hover:bg-slate-700">Check</button>
+    <div id="status-out" class="text-sm space-y-1"></div>
+  </div>
+</div>
+
+<script src="./assets/common.js"></script>
+<script>
+  SBGOV.initTurnstile();
+  SBGOV.setupTabs();
+  SBGOV.bindApply({
+    loading: "Submitting…",
+    success: "Submitted, awaiting review",
+    fail: "Submission failed",
+    waitTurnstile: "Please complete the human verification first",
+  });
+  SBGOV.bindStatus({
+    loading: "Checking…",
+    subdomainLabel: "Subdomain",
+    statusLabel: "Status",
+    blockedLabel: "This subdomain has been blocked",
+    reasonLabel: "Reason",
+    timeLabel: "Applied at",
+    waitTurnstile: "Please complete the human verification first",
+    labels: {
+      pending:  ["Pending", "text-yellow-600"],
+      approved: ["Approved", "text-green-600"],
+      rejected: ["Rejected", "text-red-600"],
+    },
+  });
+</script>
+</body>
+</html>
